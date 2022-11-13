@@ -1,2 +1,7 @@
-# CLI-Adventure-Game
-Text-based adventure game that runs in terminal
+# Adventure-Game-CLI
+
+This is a text-based adventure game to be run from any terminal application of your choice that supports bash.
+
+## Why create this project?
+
+## How to run it
