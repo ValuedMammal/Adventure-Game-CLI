@@ -334,7 +334,7 @@ echo " There has been no shortage of revelations to surface in the nine-twelveth
 since the incident in the control room. The AI was a black box - one that contained the only
 known coordinates to Sicily; the government, a mere shell and a facade; you haven't spoken to K
 since before the coup - she's all but disappeared. Now, things have never felt so grim, yet
-yet the only path is to forge ahead in the darkness. Destiny is funny like that: you never
+the only path is to forge ahead in the darkness. Destiny is funny like that: you never
 know what's demanded of you until you arrive at the moment when precise action is needed. >>"
 read ans
 
@@ -350,7 +350,7 @@ read ans
 echo " 'Let me think a moment,' you say, absently toying with the heavy, rock-clad timepiece
 on your wrist before raising a hand to your chin. You swivel to face the convex window that
 stretches from floor to ceiling. The mechanical shutters shift, revealing the black void of
-space, fait points of light scattered in the distance.
+space, faint points of light scattered in the distance.
 "
 sleep 3
 
