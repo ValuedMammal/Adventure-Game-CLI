@@ -4,9 +4,9 @@
 hour=$(date +%H)
 if [ $hour -lt 12 ] && [ $hour -gt 3 ]; then
   tod=morning
-  elif [ $hour -lt 21 ] && [ $hour -gt 3 ]; then
+elif [ $hour -lt 21 ] && [ $hour -gt 3 ]; then
   tod=afternoon
-  else tod=evening
+else tod=evening
 fi
 
 clear
