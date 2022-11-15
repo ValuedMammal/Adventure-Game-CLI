@@ -77,7 +77,7 @@ the window. 'Breakfast!' the guard calls from outside. You pull yourself up from
 >>"; read ans
 
 echo " Nearly eight days have passed since you were brought in for the crime of political
-subversion. You approach the door slot.. one last time. You take a bite of a buscuit, 
+subversion. You approach the door slot.. one last time. You take a bite of a biscuit, 
 and push the remainder of the tray back through. A loud [clang] sounds on the other side.
 >>"; read ans
 
@@ -93,7 +93,7 @@ echo " The guard waddles closer to the cell door. As he approaches, $gameName cl
 through the door slot, pulling down hard. The man's thick neck lands on the sill. >>"
 read ans
 
-echo "$gameName:'Open the door with the keycard, or say goodnight.' >>"
+echo "$gameName: 'Open the door with the keycard, or say goodnight.' >>"
 read ans
 
 echo " The guard, audibly struggling, raises a hand to the keypad [beep]. The door cracks
@@ -151,7 +151,7 @@ elif [ $ans == 'd' ]; then
   echo " The guard stiffens. He begins reaching for the electro-prod at his hip,
 but $gameName swiftly sweeps the guard's arm behind his back. $gameName raises
 a wet cloth over the guard's mouth and nose, the volatile fumes filling the
-man's lungs. He drops to the floor, silent. >>"
+man's airway. He drops to the floor, silent. >>"
   read ans
 fi
 
@@ -160,7 +160,6 @@ a ten-digit keypad. You spot the serial number on the vest of the dispatched
 sentry. >>"; read ans
 
 # Note: are we testing string equiv correctly?
-# Check case where user sends empty string
 function keypad {
 # Initialize array, choose random element
 arr=("001" "010" "011" "100" "101" "110")
@@ -181,8 +180,8 @@ last 3 digits?"
 if [ "$tripl" != "$t" ]; then
   read lastTripl
     if [ "$lastTripl" != "$t" ]; then
-    echo "failed"
-    sleep 2
+    echo "failed; looking for $t. try again.."
+    sleep 3
     keypad
     fi
 fi
@@ -532,7 +531,7 @@ read ans
 
 echo "K: 'Take me to the hard disk so I can begin running diagnostics.' >>"; read ans
 
-echo "$gameName: 'How do I know you won't just take posession of the AI and turn it over
+echo "$gameName: 'How do I know you won't just take possession of the AI and turn it over
 to the Party? You have a life there, a future.' >>"; read ans
 
 echo "K: 'I am committed to the mission we set in motion many cycles ago. But above all,

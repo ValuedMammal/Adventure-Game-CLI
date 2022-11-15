@@ -40,5 +40,6 @@ At one point the story branches, leading to two alternate endings, so completion
 
 - bug fixes, style improvements
 - add support for different character builds
+- call an api to get real time weather
 - port the code to another language/format
 - story/plot development
