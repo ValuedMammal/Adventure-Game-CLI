@@ -2,9 +2,9 @@
 
 # Get time of day (morning, afternoon, evening)
 hour=$(date +%H)
-if [ $hour -lt 12 ] && [ $hour -gt 3 ]; then
+if [ "$hour" -lt 12 ] && [ "$hour" -gt 3 ]; then
   tod=morning
-elif [ $hour -lt 21 ] && [ $hour -gt 3 ]; then
+elif [ "$hour" -lt 21 ] && [ "$hour" -gt 3 ]; then
   tod=afternoon
 else tod=evening
 fi
@@ -19,8 +19,8 @@ sleep 1
 
 echo "Haha, just kidding"
 sleep 0.5
-echo "How are you, $name? Good I hope.."
-sleep 2
+echo "How are you, $name? Good I hope.. (return)"
+read ans
 
 function start {
 clear
@@ -30,8 +30,8 @@ echo "Anyway, what would you like to do?
 3) quit"
 read strt
 case $strt in
-1) echo "Before continuing, you may want to look outside (return).";
-   read weath; start;;
+1) echo "Before continuing, you may want to look outside. (return)";
+   read ans; start;;
 2) echo "";;
 3) echo "user quit"; exit 0;;
 esac
@@ -136,7 +136,7 @@ read ans
 echo "Sentry: 'I thought Frank was on duty today.' >>"
 read ans
 
-if [ $char == 'tech' ]; then
+if [ "$char" == 'tech' ]; then
 echo "$gameName:
 w) Frank asked me to fill in
 a) I didn't ask for lip, soldier
@@ -144,10 +144,10 @@ d) Frank is dead. Move, or you're next."
 fi
 read ans
 
-if [ $ans == 'w' ] || [ $ans == 'a' ]; then
+if [ "$ans" == w ] || [ "$ans" == a ]; then
   echo "Sentry: 'You got it. I could use a break.' >>"
   read ans
-elif [ $ans == 'd' ]; then
+elif [ "$ans" == d ]; then
   echo " The guard stiffens. He begins reaching for the electro-prod at his hip,
 but $gameName swiftly sweeps the guard's arm behind his back. $gameName raises
 a wet cloth over the guard's mouth and nose, the volatile fumes filling the
@@ -159,8 +159,8 @@ echo " The door requires a high security clearance. There is a biometric scanner
 a ten-digit keypad. You spot the serial number on the vest of the dispatched
 sentry. >>"; read ans
 
-# Note: are we testing string equiv correctly?
 function keypad {
+
 # Initialize array, choose random element
 arr=("001" "010" "011" "100" "101" "110")
 t=${arr[ $RANDOM % ${#arr[@]} ]}
@@ -227,8 +227,8 @@ case $amyy in
 w) echo "Unauthorized. Please log in"; sleep 2; amy;; # dummy option
 a) echo "No new updates. Continue to archive? y/n";
   read log
-  if [ $log == n ]; then amy
-  elif [ $log == y ]; then # Easter egg
+  if [ "$log" == n ]; then amy
+  elif [ "$log" == y ]; then # Easter egg
   echo " Strange, there's nothing here but a cryptic message:
   'della Costanza, Aurelia, key word: Troubador.' >>"
   read ans;
@@ -237,8 +237,8 @@ a) echo "No new updates. Continue to archive? y/n";
 s) echo "Enabling insert mode. Saved changes will overwrite previous progress.
 Continue? y/n"
   read data
-  if [ $data == n ]; then amy
-  elif [ $data == y ]; then
+  if [ "$data" == n ]; then amy
+  elif [ "$data" == y ]; then
   echo "Which db to modify?
 (obj: nuke the db) >>"
   read ans
@@ -252,17 +252,17 @@ the remaining contents with gibberish and rip the comm line from the wall.
 d) echo "Danger: modifying contents of memory can lead to data loss.
 Please ensure back up storage. Continue? y/n"
   read mem
-  if [ $mem == n ]; then amy
-  elif [ $mem == y ]; then
+  if [ "$mem" == n ]; then amy
+  elif [ "$mem" == y ]; then
   echo "  Granting root privileges. You are responsible for command execution here forward.
   There are 3 redundant volumes here and 1 master fs. Proceed to customization? y/n"
     read mem1
-    if [ $mem1 == n ]; then amy
-    elif [ $mem1 == y ]; then
+    if [ "$mem1" == n ]; then amy
+    elif [ "$mem1" == y ]; then
     echo "    Failsafe override: All changes are final. This operation can't be undone. Are you sure? y/n"
     read mem2
-      if [ $mem2 == n ]; then amy
-      elif [ $mem2 == y ]; then
+      if [ "$mem2" == n ]; then amy
+      elif [ "$mem2" == y ]; then
       echo " You copy the complete data directories to the removable drive and eject the storage media.
 You proceed to wipe the database, programs, and all user credentials. You encrypt the OS
 with gibberish rendering it bricked. You tuck the drive into your coat pocket with a word
@@ -283,7 +283,7 @@ echo "Chapter 3: Judgment Day
 "
 sleep 2
 
-if [ $ending == 'a' ]; then
+if [ "$ending" == a ]; then
 echo " $gameName turned to head for the exit when The Chancellor suddenly appeared at the
 doorway. Strangely, the seasoned captain was alone rather than accompanied by the
 usual entourage, hinting at some clandestine motive. >>"
@@ -356,7 +356,7 @@ sleep 3
 echo "(The End)"
 
 # Ending b(expansion) - go into hiding, gain xp, rendezvous with the architect
-elif [ $ending == 'b' ]; then 
+elif [ "$ending" == b ]; then 
 echo " $gameName slips out the exit of the mainframe leaving no trace behind. As you
 advance down the corridor, the comms system is already blaring with alerts of
 intrusion and sabotage of the shipboard AI. You'll have to find somewhere to lay low
@@ -389,9 +389,9 @@ a) difficulty > 1e12
 s) block size > 2MB
 d) height > 1,050,000"
 read str5
-if [ $str5 == d ]; then
+if [ "$str5" == d ]; then
   echo "success!"; sleep 1
-  else echo "incorrect"; sleep 1; task1
+else echo "incorrect"; sleep 1; task1
 fi
 }
 
@@ -405,10 +405,10 @@ a) allow port 443
 s) allow port 123
 d) allow port 8333"
 read str4
-if [ $str4 == w ]; then
+if [ "$str4" == w ]; then
   echo "good"; sleep 1
   task5
-  else echo "incorrect"; sleep 1; task1
+else echo "incorrect"; sleep 1; task1
 fi
 }
 
@@ -421,10 +421,10 @@ a) user and group only
 s) everyone
 d) no one"
 read str3
-if [ $str3 == s ]; then
+if [ "$str3" == s ]; then
   echo "good"; sleep 1
   task4
-  else echo "incorrect"; sleep 1; task1
+else echo "incorrect"; sleep 1; task1
 fi
 }
 
@@ -437,10 +437,10 @@ a) ffff00
 s) aa00bb
 d) ababab"
 read str2
-if [ $str2 == w ]; then
+if [ "$str2" == w ]; then
   echo "good"; sleep 1
   task3
-  else echo "incorrect"; sleep 1; task1
+else echo "incorrect"; sleep 1; task1
 fi
 }
 
@@ -456,10 +456,10 @@ a) 13
 s) 17
 d) 19"
 read str1
-if [ $str1 == a ]; then
+if [ "$str1" == a ]; then
   echo "good"; sleep 1
   task2
-  else echo "incorrect"; sleep 1; task1
+else echo "incorrect"; sleep 1; task1
 fi
 }
 task1
