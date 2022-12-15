@@ -12,13 +12,9 @@ fi
 clear
 echo "Your name please?"
 read name
-sleep 1
 
-echo "Good $tod, dipshit."
+echo "Good $tod."
 sleep 1
-
-echo "Haha, just kidding"
-sleep 0.5
 echo "How are you, $name? Good I hope.. (return)"
 read ans
 
